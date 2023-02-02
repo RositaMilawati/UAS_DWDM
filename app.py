@@ -16,6 +16,7 @@ app_mode = st.sidebar.selectbox('Select Page',['Home','Prediction']) #two pages
 
 if app_mode=='Home':
     st.title('Prediksi Biaya Asuransi Kesehatan :')
+    st.title('Rosita Milawati - 2019230038 - UAS DWDM')
     st.image('insurance.jpg')
     st.title("Aplikasi Prediksi Pembayaran Asuransi Kesehatan menggunakan Algoritma Regresi Linier")
     st.markdown('Dataset :')
