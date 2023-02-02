@@ -16,7 +16,7 @@ if app_mode=='Home':
     st.title('PREDIKSI ASURANSI :') 
     st.markdown('Rosita Milawati - 2019230038 - UAS Data Warehouse & Data Mining')
     st.image('insurance.jpg')
-    st.title("Aplikasi untuk memprediksi Asuransi Menggunakan Algoritma Support Vector Machine")
+    st.title("Aplikasi untuk Prediksi Biaya Asuransi Kesehatan")
     st.markdown('Dataset :')
     data=pd.read_csv('insurance.csv')
     st.write(data.head())
