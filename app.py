@@ -16,7 +16,7 @@ app_mode = st.sidebar.selectbox('Select Page',['Home','Prediction']) #two pages
 
 if app_mode=='Home':
     st.title('Prediksi Biaya Asuransi Kesehatan :')
-    st.image('prediction.png')
+    st.image('Insurance.jpg')
     st.title("Aplikasi Prediksi Pembayaran Asuransi Kesehatan Dengan Algoritma Regresi Linier")
     st.markdown('Dataset :')
     data=pd.read_csv('insurance1.csv')
