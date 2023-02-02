@@ -16,13 +16,16 @@ app_mode = st.sidebar.selectbox('Select Page',['Home','Prediction']) #two pages
 
 if app_mode=='Home':
     st.title('Prediksi Biaya Asuransi Kesehatan :')
-    st.title('Rosita Milawati - 2019230038 - UAS DWDM')
+    st.write('Nama : Rosita Milawati')
+    st.write('NIM : 2019230038')
+    st.write('UAS Data Warehouse & Data Mining')
     st.image('insurance.jpg')
     st.title("Aplikasi Prediksi Pembayaran Asuransi Kesehatan menggunakan Algoritma Regresi Linier")
     st.markdown('Dataset :')
     data=pd.read_csv('insurance1.csv')
     st.write(data.head())
 
+    
 elif app_mode == 'Prediction':
     st.image('prediction.png')
     st.write('\n')
