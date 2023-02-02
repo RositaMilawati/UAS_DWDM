@@ -33,10 +33,10 @@ elif app_mode == 'Prediction':
     
     st.write('\n')
     age = st.number_input("Age", 0)
-    sex = st.number_input("Sex (Ket : Female = 0, Male : 1)", 0)
+    sex = st.number_input("Sex (Female = 0, Male = 1)", 0)
     bmi = st.number_input("BMI", 0)
     children = st.number_input("Children", 0)
-    smoker = st.number_input("Smoker (Ket : Yes = 0, No : 1)", 0)
+    smoker = st.number_input("Smoker (Yes = 0, No = 1)", 0)
     result =""
     
     if st.button("KLIK UNTUK PREDIKSI"):
