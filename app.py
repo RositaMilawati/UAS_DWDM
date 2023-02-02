@@ -16,8 +16,8 @@ app_mode = st.sidebar.selectbox('Select Page',['Home','Prediction']) #two pages
 
 if app_mode=='Home':
     st.title('Prediksi Biaya Asuransi Kesehatan :')
-    st.image('Insurance.jpg')
-    st.title("Aplikasi Prediksi Pembayaran Asuransi Kesehatan Dengan Algoritma Regresi Linier")
+    st.image('insurance.jpg')
+    st.title("Aplikasi Prediksi Pembayaran Asuransi Kesehatan menggunakan Algoritma Regresi Linier")
     st.markdown('Dataset :')
     data=pd.read_csv('insurance1.csv')
     st.write(data.head())
@@ -29,10 +29,10 @@ elif app_mode == 'Prediction':
     
     st.write('\n')
     age = st.number_input("Age", 0)
-    sex = st.number_input("Sex", 0)
+    sex = st.number_input("Sex (Ket : Female = 0, Male : 1)", 0)
     bmi = st.number_input("BMI", 0)
     children = st.number_input("Children", 0)
-    smoker = st.number_input("Smoker", 0)
+    smoker = st.number_input("Smoker (Ket : Yes = 0, No : 1)", 0)
     result =""
     
     if st.button("KLIK UNTUK PREDIKSI"):
