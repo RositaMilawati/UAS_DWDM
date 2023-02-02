@@ -29,7 +29,7 @@ if app_mode=='Home':
 elif app_mode == 'Prediction':
     st.image('prediction.png')
     st.write('\n')
-    st.markdown('Masukkan informasi anda dibawah ini :')
+    st.title('Masukkan informasi anda dibawah ini :')
     
     st.write('\n')
     age = st.number_input("Age", 0)
