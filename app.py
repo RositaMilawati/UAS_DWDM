@@ -3,32 +3,36 @@ import pandas as pd
 import numpy as np
 import pickle #to load a saved model
 
-def predict_charges(age, sex, bmi, children, smoker):
-    charges = pickle.load(open('model_uas.pkl', 'rb'))
-    return charges
+pickle_in = open('model_uas.pkl', 'rb')
+nb = pickle.load(pickle_in)
+
+def prediction(age, sex, bmi, children, smoker):
+
+    prediction = nb.predict([[age, sex, bmi, children, smoker]])
+    print(prediction)
+    return prediction
 
 app_mode = st.sidebar.selectbox('Select Page',['Home','Prediction']) #two pages
 
 if app_mode=='Home':
-    st.title('PREDIKSI ASURANSI :') 
-    st.markdown('Rosita Milawati - 2019230038 - UAS Data Warehouse & Data Mining')
-    st.image('insurance.jpg')
-    st.title("Aplikasi untuk Prediksi Biaya Asuransi Kesehatan")
+    st.title('Prediksi Pembayaran Premi Asuransi :') 
+    st.title("Aplikasi Prediksi Pembayaran Premi Asuransis Dengan Algoritma Regresi Linier")
     st.markdown('Dataset :')
-    data=pd.read_csv('insurance.csv')
+    data=pd.read_csv('insurance1.csv')
     st.write(data.head())
 
 elif app_mode == 'Prediction':
-    st.image('prediction.png')
     st.write('\n')
-    age = st.number_input("Age", min_value=1, max_value=100, value=30)
-    sex = st.selectbox("Sex", ["1", "0"])
-    bmi = st.number_input("BMI", min_value=10, max_value=40, value=25)
-    children = st.number_input("Number of Children", min_value=0, max_value=10, value=0)
-    smoker = st.selectbox("Smoker", ["1", "0"])
-    charges =""
+    st.markdown('Silakan, isi form berikut ini :')
     
-    if st.button("KLIK UNTUK PREDIKSI"):
-        charges = predict_charges(age, sex, bmi, children, smoker)
-    st.success("The charges are: {}".format(charges))
+    st.write('\n')
+    age = st.number_input("Age", 0)
+    sex = st.number_input("Sex", 0)
+    bmi = st.number_input("BMI", 0)
+    children = st.number_input("Children", 0)
+    smoker = st.number_input("Smoker", 0)
+    result =""
     
+    if st.button("KLIK DI SINI UNTUK PREDIKSI"):
+        result = prediction(age, sex, bmi, children, smoker)
+    st.success('Hasil Prediksi = {}'.format(result))
