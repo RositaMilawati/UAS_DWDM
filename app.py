@@ -3,9 +3,6 @@ import pandas as pd
 import numpy as np
 import pickle #to load a saved model
 
-pickle_in = open('model_uas.pkl', 'rb')
-nb = pickle.load(pickle_in)
-
 def predict_charges(age, sex, bmi, children, smoker):
     charges = pickle.load(open('model_uas.pkl', 'rb'))
     return charges
