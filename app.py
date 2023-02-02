@@ -15,12 +15,12 @@ def prediction(age, sex, bmi, children, smoker):
 app_mode = st.sidebar.selectbox('Select Page',['Home','Prediction']) #two pages
 
 if app_mode=='Home':
-    st.title('Prediksi Biaya Asuransi Kesehatan :')
+    st.title('Health Insurance Cost Prediction :')
     st.write('Nama : Rosita Milawati')
     st.write('NIM : 2019230038')
     st.write('UAS Data Warehouse & Data Mining')
     st.image('insurance.jpg')
-    st.title("Aplikasi Prediksi Pembayaran Asuransi Kesehatan menggunakan Algoritma Regresi Linier")
+    st.title("Health Insurance Payment Prediction Application using Linear Regression Algorithm")
     st.markdown('Dataset :')
     data=pd.read_csv('insurance1.csv')
     st.write(data.head())
@@ -39,6 +39,6 @@ elif app_mode == 'Prediction':
     smoker = st.number_input("Smoker (Yes = 0, No = 1)", 0)
     result =""
     
-    if st.button("KLIK UNTUK PREDIKSI"):
+    if st.button("CLICK TO PREDICTION"):
         result = prediction(age, sex, bmi, children, smoker)
-    st.success('Hasil Prediksi = {}'.format(result))
+    st.success('Predicted Results $ {}'.format(result))
